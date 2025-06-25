@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Miu - Audio World</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Miu 🎧</h1>
+    <div id="loginArea">
+      <button onclick="openLogin()">Login</button>
+    </div>
+  </header>
+
+  <div class="controls">
+    <input type="text" id="searchBar" placeholder="Search audio...">
+    <button class="category">Motivation</button>
+    <button class="category">Sad</button>
+    <button id="themeToggle">🌓 Theme</button>
+    <button onclick="openUploadForm()">📤 Upload</button>
+    <button onclick="openPlaylist()">🎵 Playlist</button>
+    <button onclick="openProfile()">👤 Profile</button>
+  </div>
+
+  <div id="audioList"></div>
+
+  <!-- Upload Modal -->
+  <div id="uploadForm" class="hidden">
+    <h3>Upload Audio</h3>
+    <input type="text" id="title" placeholder="Audio title">
+    <input type="text" id="audioURL" placeholder="Audio URL">
+    <input type="text" id="thumbURL" placeholder="Thumbnail URL">
+    <select id="categorySelect">
+      <option value="Motivation">Motivation</option>
+      <option value="Sad">Sad</option>
+    </select>
+    <label><input type="checkbox" id="isPaid"> Paid?</label>
+    <button onclick="submitAudio()">Upload</button>
+    <button onclick="closeUploadForm()">Close</button>
+  </div>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="hidden">
+    <h3>Login</h3>
+    <input type="text" id="username" placeholder="Your name">
+    <button onclick="loginUser()">Enter</button>
+    <button onclick="closeLogin()">Close</button>
+  </div>
+
+  <!-- Playlist Modal -->
+  <div id="playlistModal" class="hidden">
+    <h3>Your Playlist</h3>
+    <ul id="playlistItems"></ul>
+    <button onclick="closePlaylist()">Close</button>
+  </div>
+
+  <!-- Profile Modal -->
+  <div id="profileModal" class="hidden">
+    <h3>Your Profile</h3>
+    <div id="profileInfo"></div>
+    <button onclick="closeProfile()">Close</button>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="login.js"></script>
+  <script src="userData.js"></script>
+</body>
+</html>
